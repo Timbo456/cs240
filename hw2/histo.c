@@ -1,7 +1,6 @@
 #include <stdio.h>
 
-#define IN 1
-#define OUT 0
+
 #define WORDS 28
 
 
@@ -12,26 +11,36 @@ int main(void){
 	int word = 0;
 	
 	
+	
 	for (int a = 0; a < WORDS; ++a){
 		wordlength[a] = 0;
 	}
 
 	while ((c = getchar()) != EOF){
-		if(c == ' ' || c == '\n' || c == '\t'){
+		if((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 
+		'Z') || (c >= 0 && c <= 9)){
+		 	word = word + 1;	
 			
-			++wordlength[word];
-			word = 0;
 		}
+		
 		else {
 			
-			word = word + 1;
+			wordlength[word]++;
+			word = 0;
+			
 		}
 		
 	}
-	for (int i = 0; i < 28; ++i){
-		printf("%2d %4d:",i , wordlength[i]);
-		for (int b = 0; b < wordlength[i]; ++b){
+	
+	for (int i = 0; i < WORDS; ++i){
+		printf("%2d %6d ",i , wordlength[i]);
+		if ((wordlength[i] < 4000) && (wordlength[i] > 0)){
 			printf("*");
+		}
+		else{
+			for (int b = 0; b < (wordlength[i]/4000); ++b){
+				printf("*");
+			}
 		}
 		printf("\n");
 	}
