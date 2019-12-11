@@ -1,0 +1,14 @@
+0. (10 points)
+	a. Existence of the directory "/home/user??/hw7"
+	b. Inside hw7: calc.h getch.c getop.c main.c Makefile stack.c
+	c. Other files are allowed
+
+1. (30 points) *.c *.h files
+	a. Adherence to the style guidelines
+	b. Sensible pseudo code, variable names, comments, etc.
+	c. "make calc" gives no warnings or errors
+
+2. (60 points) calc
+	a. ./calc < testPostfix.txt produces correct output
+
+Warning: MOSS will be used to detect software similarity.
